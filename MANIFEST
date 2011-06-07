@@ -8,4 +8,3 @@ t/Indent::Form/02-pod_coverage.t
 t/Indent::Form/03-pod.t
 t/Indent::Form/04-new.t
 t/Indent::Form/05-indent.t
-t/Indent::Form/06-bad_indent.t

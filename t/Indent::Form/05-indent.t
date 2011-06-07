@@ -3,8 +3,9 @@ use strict;
 use warnings;
 
 # Modules.
+use English qw(-no_match_vars);
 use Indent::Form;
-use Test::More 'tests' => 2;
+use Test::More 'tests' => 3;
 
 # Test.
 my $obj = Indent::Form->new(
@@ -40,3 +41,12 @@ $obj = Indent::Form->new(
 );
 @ret = $obj->indent($input);
 is_deeply(\@ret, \@right_ret);
+
+# Test.
+eval {
+	Indent::Form->new(
+		'next_indent' => '  ',
+		'line_size' => 'ko',
+	);
+};
+is($EVAL_ERROR, "'line_size' parameter must be a number.\n");

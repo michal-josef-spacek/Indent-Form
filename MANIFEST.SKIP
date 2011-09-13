@@ -5,3 +5,5 @@
 \.old$
 pm_to_blib
 MANIFEST.SKIP
+MYMETA.json
+MYMETA.yml

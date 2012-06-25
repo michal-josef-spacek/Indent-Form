@@ -4,7 +4,11 @@ TODO
    formulare?
    - Jmeno.....: Michal
    - Prijmeni..: Spacek
-2.
+2. Udelat moznost mit levou cast na fixni pocet znaku.
+3. Udelat moznost, pokud nebudu mit pravou cast nezobrazovat oddelovac a pravou
+   cast.
+4. Udelat moznost zarovnani leve casti.
+5.
 
 Applied
 =======

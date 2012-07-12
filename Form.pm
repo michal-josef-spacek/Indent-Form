@@ -8,6 +8,7 @@ use warnings;
 use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use Indent::Word;
+use List::MoreUtils qw(none);
 use Readonly;
 
 # Constants.
@@ -23,9 +24,11 @@ sub new {
 	my ($class, @params) = @_;
 	my $self = bless {}, $class;
 
+	# Align.
+	$self->{'align'} = 'right';
+
 	# Options.
 	$self->{'line_size'} = $LINE_SIZE;
-	$self->{'right_align'} = 1;
 	$self->{'form_separator'} = ': ';
 	$self->{'next_indent'} = undef;
 
@@ -34,6 +37,12 @@ sub new {
 
 	# Process params.
 	set_params($self, @params);
+
+	# Check align.
+	if (none { $self->{'align'} eq $_ } qw(left right)) {
+		err '\'align\' parameter must be a \'left\' or \'right\' '.
+			'string.';
+	}
 
 	# 'line_size' check.
 	if ($self->{'line_size'} !~ /^\d*$/ms || $self->{'line_size'} < 0) {
@@ -87,10 +96,10 @@ sub indent {
 
 	foreach my $dat (@{$data_ar}) {
 		my $output = $actual_indent;
-		if ($self->{'right_align'}) {
+		if ($self->{'align'} eq 'right') {
 			$output .= $SPACE x ($max - length $dat->[0]);
 			$output .= $dat->[0];
-		} else {
+		} elsif ($self->{'align'} eq 'left') {
 			$output .= $dat->[0];
 			$output .= $SPACE x ($max - length $dat->[0]);
 		}
@@ -135,6 +144,11 @@ __END__
 
 =over 8
 
+=item * B<align>
+
+ Align of left side of form.
+ Default value is 'right'.
+
 =item * B<form_separator>
 
  TODO
@@ -154,11 +168,6 @@ __END__
 
  TODO
  Default value of 'output_separator' is new line (\n).
-
-=item * B<right_align>
-
- TODO
- Default value of 'right_align' is 1.
 
 =back
 
@@ -181,7 +190,7 @@ __END__
  From Class::Utils:
          Unknown parameter '%s'.
 
-=head1 EXAMPLE
+=head1 EXAMPLE1
 
  # Pragmas.
  use strict;
@@ -210,11 +219,43 @@ __END__
  # Description: File
  #      Author: skim.cz
 
+=head1 EXAMPLE2
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Indent::Form;
+
+ # Indent object.
+ my $indent = Indent::Form->new(
+         'align' => 'left',
+ );
+
+ # Input data.
+ my $input_ar = [
+         ['Filename', 'foo.bar'],
+         ['Size', '1456kB'],
+         ['Description', 'File'],
+         ['Author', 'skim.cz'],
+ ];
+
+ # Indent.
+ print $indent->indent($input_ar)."\n";
+
+ # Output:
+ # Filename   : foo.bar
+ # Size       : 1456kB
+ # Description: File
+ # Author     : skim.cz
+
 =head1 DEPENDENCIES
 
 L<Class::Utils(3pm)>,
 L<Error::Pure(3pm)>,
 L<Indent::Word(3pm)>,
+L<List::MoreUtils(3pm)>,
 L<Readonly(3pm)>.
 
 =head1 SEE ALSO

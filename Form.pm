@@ -189,6 +189,7 @@ __END__
 =head1 ERRORS
 
  Mine:
+         'align' parameter must be a 'left' or 'right' string.
          'line_size' parameter must be a number.
 
  From Class::Utils:

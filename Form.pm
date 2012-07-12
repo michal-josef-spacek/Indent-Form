@@ -27,9 +27,13 @@ sub new {
 	# Align.
 	$self->{'align'} = 'right';
 
-	# Options.
+	# Line size.
 	$self->{'line_size'} = $LINE_SIZE;
+
+	# Form separator.
 	$self->{'form_separator'} = ': ';
+
+	# Next indent.
 	$self->{'next_indent'} = undef;
 
 	# Output.

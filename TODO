@@ -1,9 +1,5 @@
 TODO
 ====
-1. Udelat verzi, kdy se budou doplnovat libovolne znaky do konce radku
-   formulare?
-   - Jmeno.....: Michal
-   - Prijmeni..: Spacek
 2. Udelat moznost mit levou cast na fixni pocet znaku.
 3. Udelat moznost, pokud nebudu mit pravou cast nezobrazovat oddelovac a pravou
    cast.
@@ -13,4 +9,10 @@ Applied
 =======
 4. Udelat moznost zarovnani leve casti.
 Uz bylo, ale predelal jsem API na obecnejsi.
+OK [20120712] skim
+
+1. Udelat verzi, kdy se budou doplnovat libovolne znaky do konce radku
+   formulare?
+   - Jmeno.....: Michal
+   - Prijmeni..: Spacek
 OK [20120712] skim

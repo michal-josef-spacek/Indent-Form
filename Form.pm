@@ -27,6 +27,9 @@ sub new {
 	# Align.
 	$self->{'align'} = 'right';
 
+	# Fill character.
+	$self->{'fill_character'} = $SPACE;
+
 	# Line size.
 	$self->{'line_size'} = $LINE_SIZE;
 
@@ -101,11 +104,13 @@ sub indent {
 	foreach my $dat (@{$data_ar}) {
 		my $output = $actual_indent;
 		if ($self->{'align'} eq 'right') {
-			$output .= $SPACE x ($max - length $dat->[0]);
+			$output .= $self->{'fill_character'}
+				x ($max - length $dat->[0]);
 			$output .= $dat->[0];
 		} elsif ($self->{'align'} eq 'left') {
 			$output .= $dat->[0];
-			$output .= $SPACE x ($max - length $dat->[0]);
+			$output .= $self->{'fill_character'}
+				x ($max - length $dat->[0]);
 		}
 		$output .= $self->{'form_separator'};
 		my @tmp = $word->indent($dat->[1]);
@@ -152,6 +157,11 @@ __END__
 
  Align of left side of form.
  Default value is 'right'.
+
+=item * B<fill_character>
+
+ Fill character for left side of form.
+ Default value is ' '.
 
 =item * B<form_separator>
 
@@ -254,6 +264,38 @@ __END__
  # Size       : 1456kB
  # Description: File
  # Author     : skim.cz
+
+=head1 EXAMPLE3
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Indent::Form;
+
+ # Indent object.
+ my $indent = Indent::Form->new(
+         'align' => 'left',
+         'fill_character' => '.',
+ );
+
+ # Input data.
+ my $input_ar = [
+         ['Filename', 'foo.bar'],
+         ['Size', '1456kB'],
+         ['Description', 'File'],
+         ['Author', 'skim.cz'],
+ ];
+
+ # Indent.
+ print $indent->indent($input_ar)."\n";
+
+ # Output:
+ # Filename...: foo.bar
+ # Size.......: 1456kB
+ # Description: File
+ # Author.....: skim.cz
 
 =head1 DEPENDENCIES
 

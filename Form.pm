@@ -101,23 +101,31 @@ sub indent {
 		'next_indent' => $next_indent,
 	);
 
-	foreach my $dat (@{$data_ar}) {
+	foreach my $dat_ar (@{$data_ar}) {
 		my $output = $actual_indent;
-		if ($self->{'align'} eq 'right') {
+
+		# Left side.
+		if ($self->{'align'} eq 'left') {
+			$output .= $dat_ar->[0];
 			$output .= $self->{'fill_character'}
-				x ($max - length $dat->[0]);
-			$output .= $dat->[0];
-		} elsif ($self->{'align'} eq 'left') {
-			$output .= $dat->[0];
+				x ($max - length $dat_ar->[0]);
+		} elsif ($self->{'align'} eq 'right') {
 			$output .= $self->{'fill_character'}
-				x ($max - length $dat->[0]);
+				x ($max - length $dat_ar->[0]);
+			$output .= $dat_ar->[0];
 		}
-		$output .= $self->{'form_separator'};
-		my @tmp = $word->indent($dat->[1]);
-		$output .= shift @tmp;
-		push @data, $output;
-		while (@tmp) {
-			push @data, $actual_indent.shift @tmp;
+
+		# Right side.
+		if ($dat_ar->[1]) {
+			$output .= $self->{'form_separator'};
+			my @tmp = $word->indent($dat_ar->[1]);
+			$output .= shift @tmp;
+			push @data, $output;
+			while (@tmp) {
+				push @data, $actual_indent.shift @tmp;
+			}
+		} else {
+			push @data, $output;
 		}
 	}
 

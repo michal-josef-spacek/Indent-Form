@@ -1,8 +1,6 @@
 TODO
 ====
 2. Udelat moznost mit levou cast na fixni pocet znaku.
-3. Udelat moznost, pokud nebudu mit pravou cast nezobrazovat oddelovac a pravou
-   cast.
 5.
 
 Applied
@@ -16,3 +14,7 @@ OK [20120712] skim
    - Jmeno.....: Michal
    - Prijmeni..: Spacek
 OK [20120712] skim
+
+3. Udelat moznost, pokud nebudu mit pravou cast nezobrazovat oddelovac a pravou
+   cast.
+OK [20120713] skim

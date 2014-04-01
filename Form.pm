@@ -179,50 +179,50 @@ __END__
 
 =over 8
 
-=item B<new(%params)>
+=item C<new(%params)>
 
  Constructor.
 
 =over 8
 
-=item * B<ansi>
+=item * C<ansi>
 
  Use with ANSI sequences.
  Default value is 0.
 
-=item * B<align>
+=item * C<align>
 
  Align of left side of form.
  Default value is 'right'.
 
-=item * B<fill_character>
+=item * C<fill_character>
 
  Fill character for left side of form.
  Default value is ' '.
 
-=item * B<form_separator>
+=item * C<form_separator>
 
  TODO
  Default value of 'form_separator' is ': '.
 
-=item * B<line_size>
+=item * C<line_size>
 
  TODO
  Default value of 'line_size' is 79 chars.
 
-=item * B<next_indent>
+=item * C<next_indent>
 
  TODO
  Default value of 'next_indent' isn't define.
 
-=item * B<output_separator>
+=item * C<output_separator>
 
  TODO
  Default value of 'output_separator' is new line (\n).
 
 =back
 
-=item B<indent($data_ar[, $actual_indent, $non_indent_flag])>
+=item C<indent($data_ar[, $actual_indent, $non_indent_flag])>
 
  Indent data. Returns string.
 

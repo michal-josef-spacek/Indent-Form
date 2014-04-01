@@ -6,6 +6,7 @@ use warnings;
 
 # Modules.
 use Class::Utils qw(set_params);
+use English qw(-no_match_vars);
 use Error::Pure qw(err);
 use Indent::Word;
 use List::MoreUtils qw(none);
@@ -23,6 +24,9 @@ our $VERSION = 0.01;
 sub new {
 	my ($class, @params) = @_;
 	my $self = bless {}, $class;
+
+	# Use with ANSI sequences.
+	$self->{'ansi'} = 0;
 
 	# Align.
 	$self->{'align'} = 'right';
@@ -57,6 +61,16 @@ sub new {
 			'line_size', $self->{'line_size'};
 	}
 
+	# Check rutine for removing ANSI sequences.
+	if ($self->{'ansi'}) {
+		eval {
+			require Text::ANSI::Util;
+		};
+		if ($EVAL_ERROR) {
+			err "Cannot load 'Text::ANSI::Util' module.";
+		}
+	}
+
 	# Object.
 	return $self;
 }
@@ -74,8 +88,8 @@ sub indent {
 	my $max = 0;
 	my @data;
 	foreach my $dat (@{$data_ar}) {
-		if (length $dat->[0] > $max) {
-			$max = length $dat->[0];
+		if ($self->_length($dat->[0]) > $max) {
+			$max = $self->_length($dat->[0]);
 		}
 
 		# Non-indent.
@@ -94,10 +108,10 @@ sub indent {
 
 	# Indent word.
 	my $next_indent = $self->{'next_indent'} ? $self->{'next_indent'}
-		: $SPACE x ($max + length $self->{'form_separator'});
+		: $SPACE x ($max + $self->_length($self->{'form_separator'}));
 	my $word = Indent::Word->new(
 		'line_size' => $self->{'line_size'} - $max
-			- length $self->{'form_separator'},
+			- $self->_length($self->{'form_separator'}),
 		'next_indent' => $next_indent,
 	);
 
@@ -108,10 +122,10 @@ sub indent {
 		if ($self->{'align'} eq 'left') {
 			$output .= $dat_ar->[0];
 			$output .= $self->{'fill_character'}
-				x ($max - length $dat_ar->[0]);
+				x ($max - $self->_length($dat_ar->[0]));
 		} elsif ($self->{'align'} eq 'right') {
 			$output .= $self->{'fill_character'}
-				x ($max - length $dat_ar->[0]);
+				x ($max - $self->_length($dat_ar->[0]));
 			$output .= $dat_ar->[0];
 		}
 
@@ -131,6 +145,16 @@ sub indent {
 
 	# Return as array or one line with output separator between its.
 	return wantarray ? @data : join $self->{'output_separator'}, @data;
+}
+
+# Get length.
+sub _length {
+	my ($self, $string) = @_;
+	if ($self->{'ansi'}) {
+		return length Text::ANSI::Util::ta_strip($string);
+	} else {
+		return length $string;
+	}
 }
 
 1;
@@ -160,6 +184,11 @@ __END__
  Constructor.
 
 =over 8
+
+=item * B<ansi>
+
+ Use with ANSI sequences.
+ Default value is 0.
 
 =item * B<align>
 
@@ -209,6 +238,7 @@ __END__
  Mine:
          'align' parameter must be a 'left' or 'right' string.
          'line_size' parameter must be a number.
+         Cannot load 'Text::ANSI::Util' module.
 
  From Class::Utils:
          Unknown parameter '%s'.
@@ -307,11 +337,14 @@ __END__
 
 =head1 DEPENDENCIES
 
+L<English(3pm)>,
 L<Class::Utils(3pm)>,
 L<Error::Pure(3pm)>,
 L<Indent::Word(3pm)>,
 L<List::MoreUtils(3pm)>,
 L<Readonly(3pm)>.
+
+L<Text::ANSI::Util(3pm)> for situation with 'ansi' => 1.
 
 =head1 SEE ALSO
 

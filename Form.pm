@@ -235,13 +235,12 @@ __END__
 
 =head1 ERRORS
 
- Mine:
+ new():
          'align' parameter must be a 'left' or 'right' string.
          'line_size' parameter must be a number.
          Cannot load 'Text::ANSI::Util' module.
-
- From Class::Utils:
-         Unknown parameter '%s'.
+         From Class::Utils:
+                 Unknown parameter '%s'.
 
 =head1 EXAMPLE1
 

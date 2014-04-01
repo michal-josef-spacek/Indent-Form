@@ -2,7 +2,9 @@ TODO
 ====
 2. Udelat moznost mit levou cast na fixni pocet znaku.
 5. Testy pro ANSI sekvence.
-6.
+6. Moznost zadat undef hodnoty. Ted to vyhodi warning.
+7. Moznost na prave strane mit hodnotu, newline a dalsi hodnotu pod ni.
+8.
 
 Applied
 =======

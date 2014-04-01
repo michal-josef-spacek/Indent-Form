@@ -337,21 +337,21 @@ __END__
 
 =head1 DEPENDENCIES
 
-L<English(3pm)>,
-L<Class::Utils(3pm)>,
-L<Error::Pure(3pm)>,
-L<Indent::Word(3pm)>,
-L<List::MoreUtils(3pm)>,
-L<Readonly(3pm)>.
+L<English>,
+L<Class::Utils>,
+L<Error::Pure>,
+L<Indent::Word>,
+L<List::MoreUtils>,
+L<Readonly>.
 
-L<Text::ANSI::Util(3pm)> for situation with 'ansi' => 1.
+L<Text::ANSI::Util> for situation with 'ansi' => 1.
 
 =head1 SEE ALSO
 
-L<Indent(3pm)>,
-L<Indent::Data(3pm)>,
-L<Indent::Utils(3pm)>,
-L<Indent::Word(3pm)>.
+L<Indent>,
+L<Indent::Data>,
+L<Indent::Utils>,
+L<Indent::Word>.
 
 =head1 AUTHOR
 

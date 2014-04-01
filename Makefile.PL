@@ -10,6 +10,7 @@ abstract 'A perl module for form indenting.';
 author 'Michal Špaček <skim@cpan.org>';
 license 'bsd';
 name 'Indent-Form';
+readme_from 'Form.pm';
 requires 'Class::Utils' => 0.03;
 requires 'Error::Pure' => 0.08;
 requires 'Indent::Word' => 0.01;

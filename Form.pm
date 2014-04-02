@@ -202,22 +202,22 @@ __END__
 
 =item * C<form_separator>
 
- TODO
+ Form separator.
  Default value of 'form_separator' is ': '.
 
 =item * C<line_size>
 
- TODO
+ Line size.
  Default value of 'line_size' is 79 chars.
 
 =item * C<next_indent>
 
- TODO
+ Next indent.
  Default value of 'next_indent' isn't define.
 
 =item * C<output_separator>
 
- TODO
+ Output separator.
  Default value of 'output_separator' is new line (\n).
 
 =back
@@ -336,8 +336,8 @@ __END__
 
 =head1 DEPENDENCIES
 
-L<English>,
 L<Class::Utils>,
+L<English>,
 L<Error::Pure>,
 L<Indent::Word>,
 L<List::MoreUtils>,
@@ -348,7 +348,9 @@ L<Text::ANSI::Util> for situation with 'ansi' => 1.
 =head1 SEE ALSO
 
 L<Indent>,
+L<Indent::Block>,
 L<Indent::Data>,
+L<Indent::String>,
 L<Indent::Utils>,
 L<Indent::Word>.
 

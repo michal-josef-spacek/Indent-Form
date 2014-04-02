@@ -34,11 +34,11 @@ sub new {
 	# Fill character.
 	$self->{'fill_character'} = $SPACE;
 
-	# Line size.
-	$self->{'line_size'} = $LINE_SIZE;
-
 	# Form separator.
 	$self->{'form_separator'} = ': ';
+
+	# Line size.
+	$self->{'line_size'} = $LINE_SIZE;
 
 	# Next indent.
 	$self->{'next_indent'} = undef;

@@ -2,7 +2,6 @@ Changes
 examples/ex1.pl
 examples/ex2.pl
 examples/ex3.pl
-form.pm
 Form.pm
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
@@ -23,4 +22,3 @@ t/Indent-Form/02-pod_coverage.t
 t/Indent-Form/03-pod.t
 t/Indent-Form/04-new.t
 t/Indent-Form/05-indent.t
-TODO

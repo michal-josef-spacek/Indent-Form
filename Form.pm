@@ -43,7 +43,7 @@ sub new {
 	# Next indent.
 	$self->{'next_indent'} = undef;
 
-	# Output.
+	# Output separator.
 	$self->{'output_separator'} = "\n";
 
 	# Process params.

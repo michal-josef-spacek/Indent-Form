@@ -1,4 +1,5 @@
 0.02
+ - Fix strings with ANSI sequences via Indent::Word object.
 
 0.01 2014-04-02T14:16:38+02:00
  - First version.

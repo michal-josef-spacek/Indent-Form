@@ -110,6 +110,7 @@ sub indent {
 	my $next_indent = $self->{'next_indent'} ? $self->{'next_indent'}
 		: $SPACE x ($max + $self->_length($self->{'form_separator'}));
 	my $word = Indent::Word->new(
+		'ansi' => $self->{'ansi'},
 		'line_size' => $self->{'line_size'} - $max
 			- $self->_length($self->{'form_separator'}),
 		'next_indent' => $next_indent,

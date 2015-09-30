@@ -14,7 +14,7 @@ configure_requires:
   ExtUtils::MakeMaker: 6.36
 distribution_type: module
 dynamic_config: 1
-generated_by: 'Module::Install version 1.10'
+generated_by: 'Module::Install version 1.16'
 license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -36,6 +36,6 @@ requires:
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Indent-Form
   homepage: https://github.com/tupinek/Indent-Form
-  license: http://opensource.org/licenses/BSD-3-Clause
+  license: http://opensource.org/licenses/bsd-license.php
   repository: git://github.com/tupinek/Indent-Form
-version: 0.02
+version: '0.02'

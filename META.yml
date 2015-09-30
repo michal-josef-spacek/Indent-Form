@@ -1,7 +1,7 @@
 ---
 abstract: 'A perl module for form indenting.'
 author:
-  - 'Michal Špaček <skim@cpan.org>'
+  - 'Michal Spacek <skim@cpan.org>'
 build_requires:
   English: 0
   ExtUtils::MakeMaker: 6.36

@@ -1,4 +1,4 @@
-0.02
+0.02 2020-01-18T13:35:05+01:00
  - Add REPOSITORY section to doc.
  - Add LICENSE file.
  - Fix strings with ANSI sequences via Indent::Word object.

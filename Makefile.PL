@@ -18,7 +18,7 @@ readme_from 'Form.pm';
 requires 'Class::Utils' => 0.05;
 requires 'English' => 0;
 requires 'Error::Pure' => 0.16;
-requires 'Indent::Word' => 0.03;
+requires 'Indent::Word' => 0.04;
 requires 'List::MoreUtils' => 0;
 requires 'Readonly' => 0;
 requires 'perl' => '5.6.2';

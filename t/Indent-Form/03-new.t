@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 use English qw(-no_match_vars);
+use Error::Pure::Utils qw(clean);
 use Indent::Form;
 use Test::More 'tests' => 5;
 use Test::NoWarnings;
@@ -11,6 +12,7 @@ eval {
 	Indent::Form->new('');
 };
 is($EVAL_ERROR, "Unknown parameter ''.\n", "Unknown parameter ''.");
+clean();
 
 # Test.
 eval {
@@ -20,6 +22,7 @@ eval {
 };
 is($EVAL_ERROR, "Unknown parameter 'something'.\n",
 	"Unknown parameter 'something'.");
+clean();
 
 # Test.
 eval {
@@ -29,6 +32,7 @@ eval {
 };
 is($EVAL_ERROR, "'align' parameter must be a 'left' or 'right' string.\n",
 	"'align' parameter must be a 'left' or 'right' string.");
+clean();
 
 # Test.
 my $obj = Indent::Form->new;

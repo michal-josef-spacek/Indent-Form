@@ -3,7 +3,7 @@ use warnings;
 
 use English qw(-no_match_vars);
 use Indent::Form;
-use Test::More 'tests' => 5;
+use Test::More 'tests' => 8;
 use Test::NoWarnings;
 
 # Test.
@@ -65,3 +65,41 @@ eval {
 };
 is($EVAL_ERROR, "'line_size' parameter must be a number.\n",
 	"Error with bad 'line_size' parameter.");
+
+# Test.
+$obj = Indent::Form->new;
+$input = [
+	[undef, 'value'],
+];
+@right_ret = (
+	': value',
+);
+@ret = $obj->indent($input);
+is_deeply(\@ret, \@right_ret, 'Indent with undef in first column.');
+
+# Test.
+$obj = Indent::Form->new;
+$input = [
+	['value', undef],
+];
+@right_ret = (
+	'value',
+);
+@ret = $obj->indent($input);
+is_deeply(\@ret, \@right_ret, 'Indent with undef in second column.');
+
+# Test.
+# TODO non-sense second line.
+$obj = Indent::Form->new;
+$input = [
+	['key', 'value'],
+	[undef, undef],
+	['key', 'value'],
+];
+@right_ret = (
+	'key: value',
+	'   ',
+	'key: value',
+);
+@ret = $obj->indent($input);
+is_deeply(\@ret, \@right_ret, 'Indent with undef in both columns.');

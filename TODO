@@ -2,6 +2,8 @@ TODO
 ====
 2. Udelat moznost mit levou cast na fixni pocet znaku.
 6. Moznost zadat undef hodnoty. Ted to vyhodi warning.
+Pridat jsem testy pro to. Neco jsem opravil.
+Ted tam neni warning, ale neni tam dvojtecka, to chci zmenit.
 7. Moznost na prave strane mit hodnotu, newline a dalsi hodnotu pod ni.
 9.
 

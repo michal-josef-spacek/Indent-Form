@@ -118,13 +118,13 @@ sub indent {
 
 		# Left side.
 		if ($self->{'align'} eq 'left') {
-			$output .= $dat_ar->[0];
+			$output .= $self->_value($dat_ar->[0]);
 			$output .= $self->{'fill_character'}
 				x ($max - $self->_length($dat_ar->[0]));
 		} elsif ($self->{'align'} eq 'right') {
 			$output .= $self->{'fill_character'}
 				x ($max - $self->_length($dat_ar->[0]));
-			$output .= $dat_ar->[0];
+			$output .= $self->_value($dat_ar->[0]);
 		}
 
 		# Right side.
@@ -148,11 +148,26 @@ sub indent {
 # Get length.
 sub _length {
 	my ($self, $string) = @_;
+
+	if (! defined $string) {
+		return 0;
+	}
+
 	if ($self->{'ansi'}) {
 		return length Text::ANSI::Util::ta_strip($string);
 	} else {
 		return length $string;
 	}
+}
+
+sub _value {
+	my ($self, $string) = @_;
+
+	if (! defined $string) {
+		return $EMPTY_STR;
+	}
+
+	return $string;
 }
 
 1;

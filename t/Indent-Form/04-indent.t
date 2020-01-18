@@ -3,7 +3,7 @@ use warnings;
 
 use English qw(-no_match_vars);
 use Indent::Form;
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
 
 # Test.
@@ -23,6 +23,20 @@ my @right_ret = (
 );
 my @ret = $obj->indent($input);
 is_deeply(\@ret, \@right_ret);
+
+# Test.
+$input = [
+        ['Login', 'Michal Spacek'],
+        ['Password', 'abcdefghijklmnopqrstuvw'],
+        ['Info', 'This is big info.'],
+];
+@right_ret = (
+	'Foo:    Login: Michal Spacek',
+	'Foo: Password: abcdefghijklmnopqrstuvw',
+	'Foo:     Info: This is big info.',
+);
+@ret = $obj->indent($input, 'Foo: ');
+is_deeply(\@ret, \@right_ret, 'Indent with local prefix.');
 
 # Test.
 $obj = Indent::Form->new(

@@ -3,7 +3,7 @@ use warnings;
 
 use English qw(-no_match_vars);
 use Indent::Form;
-use Test::More 'tests' => 8;
+use Test::More 'tests' => 9;
 use Test::NoWarnings;
 
 # Test.
@@ -22,7 +22,26 @@ my @right_ret = (
 	'    Info: This is big info.',
 );
 my @ret = $obj->indent($input);
-is_deeply(\@ret, \@right_ret, 'Default indent.');
+is_deeply(\@ret, \@right_ret, 'Default indent, return data array.');
+
+# Test.
+$obj = Indent::Form->new(
+	'line_size' => 80,
+	'output_separator' => "\n",
+);
+$input = [
+        ['Login', 'Michal Spacek'],
+        ['Password', 'abcdefghijklmnopqrstuvw'],
+        ['Info', 'This is big info.'],
+];
+my $right_ret =<< 'END';
+   Login: Michal Spacek
+Password: abcdefghijklmnopqrstuvw
+    Info: This is big info.
+END
+chomp $right_ret;
+my $ret = $obj->indent($input);
+is($ret, $right_ret, 'Default indent, return string.');
 
 # Test.
 $obj = Indent::Form->new;

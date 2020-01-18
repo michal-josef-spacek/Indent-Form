@@ -3,7 +3,7 @@ use warnings;
 
 use English qw(-no_match_vars);
 use Indent::Form;
-use Test::More 'tests' => 10;
+use Test::More 'tests' => 9;
 use Test::NoWarnings;
 
 # Test.
@@ -115,28 +115,19 @@ $input = [
 is_deeply(\@ret, \@right_ret, 'Indent with undef in first column.');
 
 # Test.
-$obj = Indent::Form->new;
-$input = [
-	['value', undef],
-];
-@right_ret = (
-	'value',
-);
-@ret = $obj->indent($input);
-is_deeply(\@ret, \@right_ret, 'Indent with undef in second column.');
-
-# Test.
-# TODO non-sense second line.
+# TODO non-sense second and third line. We need add ':'.
 $obj = Indent::Form->new;
 $input = [
 	['key', 'value'],
 	[undef, undef],
-	['key', 'value'],
+	['key', undef],
+	[undef, 'value'],
 ];
 @right_ret = (
 	'key: value',
 	'   ',
-	'key: value',
+	'key',
+	'   : value',
 );
 @ret = $obj->indent($input);
-is_deeply(\@ret, \@right_ret, 'Indent with undef in both columns.');
+is_deeply(\@ret, \@right_ret, 'Indent with undef in different situations.');

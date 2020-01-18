@@ -7,7 +7,7 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'A perl module for form indenting.';
-author 'Michal Spacek <skim@cpan.org>';
+author 'Michal Josef Spacek <skim@cpan.org>';
 license 'bsd';
 name 'Indent-Form';
 readme_from 'Form.pm';

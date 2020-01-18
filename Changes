@@ -5,6 +5,7 @@
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Update .travis.yml to reality.
  - Update Module::Install to 1.19 version.
+ - Update author name.
  - Update copyright years.
 
 0.01 2014-04-02T14:16:38+02:00

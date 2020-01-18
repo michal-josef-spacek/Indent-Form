@@ -5,6 +5,7 @@
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Improve SEE ALSO section in doc.
  - Remove diacritics from author name in Makefile.PL.
+ - Rewrite tests to author tests and rest.
  - Update .travis.yml to reality.
  - Update Module::Install to 1.19 version.
  - Update author github username to reality.

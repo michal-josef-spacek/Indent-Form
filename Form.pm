@@ -116,12 +116,14 @@ sub indent {
 	foreach my $dat_ar (@{$data_ar}) {
 		my $output = $actual_indent;
 
-		# Left side.
+		# Left side, left align.
 		if ($self->{'align'} eq 'left') {
 			$output .= $self->_value($dat_ar->[0]);
 			$output .= $self->{'fill_character'}
 				x ($max - $self->_length($dat_ar->[0]));
-		} elsif ($self->{'align'} eq 'right') {
+
+		# Left side, right align.
+		} else {
 			$output .= $self->{'fill_character'}
 				x ($max - $self->_length($dat_ar->[0]));
 			$output .= $self->_value($dat_ar->[0]);

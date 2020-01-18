@@ -1,16 +1,6 @@
 TODO
 ====
 2. Udelat moznost mit levou cast na fixni pocet znaku.
-5. Testy pro ANSI sekvence.
-V 0.01 je urcite chyba perl/MODULES/Dicom-Terms - nema to 80 znaku na radek a deli
-to.
-V 0.02 je chyba, kdy leze toto:
-  MWL: Modality Worklist|
- PACS: Picture          |
-       Archiving        |
-       and              |
-       Communication    |
-       System           |
 6. Moznost zadat undef hodnoty. Ted to vyhodi warning.
 7. Moznost na prave strane mit hodnotu, newline a dalsi hodnotu pod ni.
 8.
@@ -30,3 +20,16 @@ OK [20120712] skim
 3. Udelat moznost, pokud nebudu mit pravou cast nezobrazovat oddelovac a pravou
    cast.
 OK [20120713] skim
+
+5. Testy pro ANSI sekvence.
+V 0.01 je urcite chyba perl/MODULES/Dicom-Terms - nema to 80 znaku na radek a deli
+to.
+V 0.02 je chyba, kdy leze toto:
+  MWL: Modality Worklist|
+ PACS: Picture          |
+       Archiving        |
+       and              |
+       Communication    |
+       System           |
+Tested and seems ok.
+OK [20200118] skim

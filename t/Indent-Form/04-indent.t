@@ -115,7 +115,6 @@ $input = [
 is_deeply(\@ret, \@right_ret, 'Indent with undef in first column.');
 
 # Test.
-# TODO non-sense second and third line. We need add ':'.
 $obj = Indent::Form->new;
 $input = [
 	['key', 'value'],
@@ -125,8 +124,8 @@ $input = [
 ];
 @right_ret = (
 	'key: value',
-	'   ',
-	'key',
+	'   : ',
+	'key: ',
 	'   : value',
 );
 @ret = $obj->indent($input);

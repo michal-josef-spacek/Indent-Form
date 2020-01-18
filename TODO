@@ -1,9 +1,6 @@
 TODO
 ====
 2. Udelat moznost mit levou cast na fixni pocet znaku.
-6. Moznost zadat undef hodnoty. Ted to vyhodi warning.
-Pridat jsem testy pro to. Neco jsem opravil.
-Ted tam neni warning, ale neni tam dvojtecka, to chci zmenit.
 7. Moznost na prave strane mit hodnotu, newline a dalsi hodnotu pod ni.
 9.
 
@@ -39,3 +36,8 @@ OK [20200118] skim
 8. Chyba, kdy mam formular z dat ['Login', 'Michal Spacek'] a ureze se 'Spacek'.
 No bug, only split to multiple lines.
 NONE [20200118] skim
+
+6. Moznost zadat undef hodnoty. Ted to vyhodi warning.
+Pridat jsem testy pro to. Neco jsem opravil.
+Ted tam neni warning, ale neni tam dvojtecka, to chci zmenit.
+OK [20200118] skim

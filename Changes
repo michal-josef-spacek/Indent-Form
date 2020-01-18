@@ -1,4 +1,5 @@
 0.05
+ - Fix adding of separator to situation when second columns is undef.
 
 0.04 2020-01-18T19:37:45+01:00
  - Add test comments.

@@ -130,16 +130,12 @@ sub indent {
 		}
 
 		# Right side.
-		if ($dat_ar->[1]) {
-			$output .= $self->{'form_separator'};
-			my @tmp = $word->indent($dat_ar->[1]);
-			$output .= shift @tmp;
-			push @data, $output;
-			while (@tmp) {
-				push @data, $actual_indent.shift @tmp;
-			}
-		} else {
-			push @data, $output;
+		$output .= $self->{'form_separator'};
+		my @tmp = $word->indent($self->_value($dat_ar->[1]));
+		$output .= shift @tmp if @tmp;
+		push @data, $output;
+		while (@tmp) {
+			push @data, $actual_indent.shift @tmp;
 		}
 	}
 

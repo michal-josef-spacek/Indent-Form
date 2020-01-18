@@ -25,6 +25,7 @@ my @ret = $obj->indent($input);
 is_deeply(\@ret, \@right_ret, 'Default indent.');
 
 # Test.
+$obj = Indent::Form->new;
 $input = [
         ['Login', 'Michal Spacek'],
         ['Password', 'abcdefghijklmnopqrstuvw'],

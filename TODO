@@ -3,7 +3,8 @@ TODO
 2. Udelat moznost mit levou cast na fixni pocet znaku.
 6. Moznost zadat undef hodnoty. Ted to vyhodi warning.
 7. Moznost na prave strane mit hodnotu, newline a dalsi hodnotu pod ni.
-8.
+8. Chyba, kdy mam formular z dat ['Login', 'Michal Spacek'] a ureze se 'Spacek'.
+9.
 
 Applied
 =======

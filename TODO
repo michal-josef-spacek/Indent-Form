@@ -3,7 +3,6 @@ TODO
 2. Udelat moznost mit levou cast na fixni pocet znaku.
 6. Moznost zadat undef hodnoty. Ted to vyhodi warning.
 7. Moznost na prave strane mit hodnotu, newline a dalsi hodnotu pod ni.
-8. Chyba, kdy mam formular z dat ['Login', 'Michal Spacek'] a ureze se 'Spacek'.
 9.
 
 Applied
@@ -34,3 +33,7 @@ V 0.02 je chyba, kdy leze toto:
        System           |
 Tested and seems ok.
 OK [20200118] skim
+
+8. Chyba, kdy mam formular z dat ['Login', 'Michal Spacek'] a ureze se 'Spacek'.
+No bug, only split to multiple lines.
+NONE [20200118] skim

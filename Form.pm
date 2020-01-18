@@ -91,8 +91,8 @@ sub indent {
 
 		# Non-indent.
 		if ($non_indent_flag) {
-			push @data, $dat->[0].$self->{'form_separator'}.
-				$dat->[1];
+			push @data, $self->_value($dat->[0]).$self->{'form_separator'}.
+				$self->_value($dat->[1]);
 		}
 	}
 

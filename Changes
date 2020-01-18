@@ -1,4 +1,5 @@
 0.03
+ - Add example to doc with explicit indent.
  - Add test for indent with explicit indent for all.
  - Fix dependency to Indent::Work 0.04 with ansi support.
 

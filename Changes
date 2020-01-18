@@ -1,5 +1,6 @@
 0.04
  - Add test comments.
+ - Add test for bad align.
  - Add tests with undef in different situations.
 
 0.03 2020-01-18T17:24:27+01:00

@@ -3,7 +3,7 @@
  - Fix strings with ANSI sequences via Indent::Word object.
  - Remove diacritics from author name in Makefile.PL.
  - Update .travis.yml to reality.
- - Update Module::Install to 1.16 version.
+ - Update Module::Install to 1.19 version.
 
 0.01 2014-04-02T14:16:38+02:00
  - First version.

@@ -170,6 +170,7 @@ __END__
 =head1 SYNOPSIS
 
  use Indent::Form;
+
  my $indent = Indent::Form->new(%parametes);
  $indent->indent($data_ar, $actual_indent, $non_indent_flag);
 

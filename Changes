@@ -2,8 +2,8 @@
  - Add REPOSITORY section to doc.
  - Add LICENSE file.
  - Fix strings with ANSI sequences via Indent::Word object.
- - Remove diacritics from author name in Makefile.PL.
  - Improve LICENSE AND COPYRIGHT section in doc.
+ - Remove diacritics from author name in Makefile.PL.
  - Update .travis.yml to reality.
  - Update Module::Install to 1.19 version.
  - Update author github username to reality.

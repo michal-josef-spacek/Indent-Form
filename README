@@ -157,8 +157,23 @@ DEPENDENCIES
     Text::ANSI::Util for situation with 'ansi' => 1.
 
 SEE ALSO
-    Indent, Indent::Block, Indent::Data, Indent::String, Indent::Utils,
-    Indent::Word.
+    Indent
+             Class for indent handling.
+
+    Indent::Block
+             Class for block indenting.
+
+    Indent::Data
+             Class for data indenting.
+
+    Indent::String
+             Class for text indenting.
+
+    Indent::Utils
+             Utilities for Indent classes.
+
+    Indent::Word
+             Class for word indenting.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Indent-Form>

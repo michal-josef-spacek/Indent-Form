@@ -1,10 +1,8 @@
 package Indent::Form;
 
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Class::Utils qw(set_params);
 use English qw(-no_match_vars);
 use Error::Pure qw(err);
@@ -17,7 +15,6 @@ Readonly::Scalar my $EMPTY_STR => q{};
 Readonly::Scalar my $LINE_SIZE => 79;
 Readonly::Scalar my $SPACE => q{ };
 
-# Version.
 our $VERSION = 0.02;
 
 # Constructor.
@@ -245,11 +242,9 @@ __END__
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Indent::Form;
 
  # Indent object.
@@ -274,11 +269,9 @@ __END__
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Indent::Form;
 
  # Indent object.
@@ -305,11 +298,9 @@ __END__
 
 =head1 EXAMPLE3
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Indent::Form;
 
  # Indent object.

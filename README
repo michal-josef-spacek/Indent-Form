@@ -62,11 +62,9 @@ ERRORS
                      Unknown parameter '%s'.
 
 EXAMPLE1
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Indent::Form;
 
      # Indent object.
@@ -90,11 +88,9 @@ EXAMPLE1
      #      Author: skim.cz
 
 EXAMPLE2
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Indent::Form;
 
      # Indent object.
@@ -120,11 +116,9 @@ EXAMPLE2
      # Author     : skim.cz
 
 EXAMPLE3
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Indent::Form;
 
      # Indent object.

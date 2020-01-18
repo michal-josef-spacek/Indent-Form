@@ -4,7 +4,7 @@ use warnings;
 use English qw(-no_match_vars);
 use Error::Pure::Utils qw(clean);
 use Indent::Form;
-use Test::More 'tests' => 5;
+use Test::More 'tests' => 6;
 use Test::NoWarnings;
 
 # Test.
@@ -32,6 +32,16 @@ eval {
 };
 is($EVAL_ERROR, "'align' parameter must be a 'left' or 'right' string.\n",
 	"'align' parameter must be a 'left' or 'right' string.");
+clean();
+
+# Test.
+eval {
+	Indent::Form->new(
+		'line_size' => 'bad_length',
+	);
+};
+is($EVAL_ERROR, "'line_size' parameter must be a number.\n",
+	"'line_size' parameter must be a number.");
 clean();
 
 # Test.

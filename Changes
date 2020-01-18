@@ -1,6 +1,7 @@
 0.04
  - Add test comments.
  - Add test for bad align.
+ - Add test for line size.
  - Add tests with undef in different situations.
  - Fix cleanup in tests after error.
 

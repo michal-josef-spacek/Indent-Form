@@ -3,7 +3,7 @@ use warnings;
 
 use English qw(-no_match_vars);
 use Indent::Form;
-use Test::More 'tests' => 9;
+use Test::More 'tests' => 11;
 use Test::NoWarnings;
 
 # Test.
@@ -131,3 +131,40 @@ $input = [
 );
 @ret = $obj->indent($input);
 is_deeply(\@ret, \@right_ret, 'Indent with undef in different situations.');
+
+# Test.
+$obj = Indent::Form->new;
+$input = [
+	['key', 'value'],
+	[undef, undef],
+	['key', undef],
+	[undef, 'value'],
+];
+@right_ret = (
+	'key: value',
+	': ',
+	'key: ',
+	': value',
+);
+@ret = $obj->indent($input, undef, 1);
+is_deeply(\@ret, \@right_ret, 'Indent with undef in different situations. '.
+	'In mode without indentation, returns array structure.');
+
+# Test.
+$obj = Indent::Form->new;
+$input = [
+	['key', 'value'],
+	[undef, undef],
+	['key', undef],
+	[undef, 'value'],
+];
+$right_ret =<< 'END';
+key: value
+: 
+key: 
+: value
+END
+chomp $right_ret;
+$ret = $obj->indent($input, undef, 1);
+is($ret, $right_ret, 'Indent with undef in different situations. '.
+	'In mode without indentation, returns string.');

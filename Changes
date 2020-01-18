@@ -5,6 +5,7 @@
  - Add test for line size.
  - Add test for negative line size and remove non-sense code.
  - Add test for returning of string.
+ - Add tests for non-indent-flag.
  - Add tests with undef in different situations.
  - Fix cleanup in tests after error.
  - Fix non-indent-flag usage with undef values.

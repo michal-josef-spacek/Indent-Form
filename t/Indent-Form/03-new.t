@@ -4,7 +4,7 @@ use warnings;
 use English qw(-no_match_vars);
 use Error::Pure::Utils qw(clean);
 use Indent::Form;
-use Test::More 'tests' => 6;
+use Test::More 'tests' => 7;
 use Test::NoWarnings;
 
 # Test.
@@ -43,6 +43,15 @@ eval {
 is($EVAL_ERROR, "'line_size' parameter must be a number.\n",
 	"'line_size' parameter must be a number.");
 clean();
+
+# Test.
+eval {
+	Indent::Form->new(
+		'line_size' => -10,
+	);
+};
+is($EVAL_ERROR, "'line_size' parameter must be a number.\n",
+	"Error in negative line size parameter.");
 
 # Test.
 my $obj = Indent::Form->new;

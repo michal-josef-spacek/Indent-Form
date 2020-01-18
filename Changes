@@ -2,6 +2,7 @@
  - Add test comments.
  - Add test for bad align.
  - Add test for line size.
+ - Add test for negative line size and remove non-sense code.
  - Add tests with undef in different situations.
  - Fix cleanup in tests after error.
 

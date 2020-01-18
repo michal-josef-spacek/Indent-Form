@@ -53,7 +53,7 @@ sub new {
 	}
 
 	# 'line_size' check.
-	if ($self->{'line_size'} !~ /^\d*$/ms || $self->{'line_size'} < 0) {
+	if ($self->{'line_size'} !~ /^\d*$/ms) {
 		err '\'line_size\' parameter must be a number.', 
 			'line_size', $self->{'line_size'};
 	}

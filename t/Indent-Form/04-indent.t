@@ -22,7 +22,7 @@ my @right_ret = (
 	'    Info: This is big info.',
 );
 my @ret = $obj->indent($input);
-is_deeply(\@ret, \@right_ret);
+is_deeply(\@ret, \@right_ret, 'Default indent.');
 
 # Test.
 $input = [
@@ -53,7 +53,7 @@ $obj = Indent::Form->new(
 	'          info.',
 );
 @ret = $obj->indent($input);
-is_deeply(\@ret, \@right_ret);
+is_deeply(\@ret, \@right_ret, 'Indent with smaller line size (10).');
 
 # Test.
 eval {
@@ -62,4 +62,5 @@ eval {
 		'line_size' => 'ko',
 	);
 };
-is($EVAL_ERROR, "'line_size' parameter must be a number.\n");
+is($EVAL_ERROR, "'line_size' parameter must be a number.\n",
+	"Error with bad 'line_size' parameter.");

@@ -185,15 +185,18 @@ __END__
  use Indent::Form;
 
  my $indent = Indent::Form->new(%parametes);
- $indent->indent($data_ar, $actual_indent, $non_indent_flag);
+ my $string = $indent->indent($data_ar, $actual_indent, $non_indent_flag);
+ my @string = $indent->indent($data_ar, $actual_indent, $non_indent_flag);
 
 =head1 METHODS
 
-=over 8
+=head2 C<new>
 
-=item C<new(%params)>
+ my $indent = Indent::Form->new(%parametes);
 
- Constructor.
+Constructor.
+
+Returns instance of object.
 
 =over 8
 
@@ -234,16 +237,19 @@ __END__
 
 =back
 
-=item C<indent($data_ar[, $actual_indent, $non_indent_flag])>
+=head2 C<indent>
 
- Indent data. Returns string.
+ my $string = $indent->indent($data_ar, $actual_indent, $non_indent_flag);
+ my @string = $indent->indent($data_ar, $actual_indent, $non_indent_flag);
+
+Indent data. Scalar output is controlled by 'output_separator' parameter.
 
  Arguments:
  $data_ar - Reference to data array ([['key' => 'value'], [..]]);
  $actual_indent - String to actual indent.
  $non_indent_flag - Flag, than says no-indent.
 
-=back
+Returns string or array of strings in array context.
 
 =head1 ERRORS
 

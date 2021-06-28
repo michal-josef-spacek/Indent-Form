@@ -1,4 +1,5 @@
 0.07
+ - Add doc about NO_COLOR env variable.
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Rewrite doc to use =head2 and improve doc.
  - Update bugtracker to Github.

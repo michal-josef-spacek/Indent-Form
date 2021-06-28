@@ -65,6 +65,11 @@ METHODS
 
     Returns string or array of strings in array context.
 
+ENVIRONMENT
+    Output is controlled by env variable "NO_COLOR" via Term::ANSIColor Perl
+    module. If we set 'ansi' parameter to 1 and env variable "NO_COLOR" will
+    be 1, output will be without ANSI colors. See <https://no-color.org/>.
+
 ERRORS
      new():
              'align' parameter must be a 'left' or 'right' string.

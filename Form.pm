@@ -251,6 +251,12 @@ Indent data. Scalar output is controlled by 'output_separator' parameter.
 
 Returns string or array of strings in array context.
 
+=head1 ENVIRONMENT
+
+Output is controlled by env variable C<NO_COLOR> via L<Term::ANSIColor> Perl
+module. If we set 'ansi' parameter to 1 and env variable C<NO_COLOR> will be 1,
+output will be without ANSI colors. See L<https://no-color.org/>.
+
 =head1 ERRORS
 
  new():

@@ -1,6 +1,7 @@
 0.07
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Rewrite doc to use =head2 and improve doc.
+ - Update bugtracker to Github.
  - Update copyright years.
 
 0.06 2020-04-20T00:45:41+02:00

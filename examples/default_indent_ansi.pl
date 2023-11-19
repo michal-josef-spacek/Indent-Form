@@ -8,7 +8,7 @@ use Term::ANSIColor;
 
 # Indent object.
 my $indent = Indent::Form->new(
-    'ansi' => 1,
+        'ansi' => 1,
 );
 
 # Input data.

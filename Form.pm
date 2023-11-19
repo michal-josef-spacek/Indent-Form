@@ -400,7 +400,7 @@ output will be without ANSI colors. See L<https://no-color.org/>.
 
  # Indent object.
  my $indent = Indent::Form->new(
-     'ansi' => 1,
+         'ansi' => 1,
  );
 
  # Input data.

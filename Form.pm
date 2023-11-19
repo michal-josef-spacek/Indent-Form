@@ -268,6 +268,8 @@ output will be without ANSI colors. See L<https://no-color.org/>.
 
 =head1 EXAMPLE1
 
+=for comment filename=default_indent.pl
+
  use strict;
  use warnings;
 
@@ -294,6 +296,8 @@ output will be without ANSI colors. See L<https://no-color.org/>.
  #      Author: skim.cz
 
 =head1 EXAMPLE2
+
+=for comment filename=left_indent.pl
 
  use strict;
  use warnings;
@@ -323,6 +327,8 @@ output will be without ANSI colors. See L<https://no-color.org/>.
  # Author     : skim.cz
 
 =head1 EXAMPLE3
+
+=for comment filename=left_indent_with_dots.pl
 
  use strict;
  use warnings;
@@ -354,6 +360,8 @@ output will be without ANSI colors. See L<https://no-color.org/>.
 
 =head1 EXAMPLE4
 
+=for comment filename=default_indent_with_prefix.pl
+
  use strict;
  use warnings;
 
@@ -381,6 +389,8 @@ output will be without ANSI colors. See L<https://no-color.org/>.
  # |↔|      Author: skim.cz
 
 =head1 EXAMPLE5
+
+=for comment filename=default_indent_ansi.pl
 
  use strict;
  use warnings;

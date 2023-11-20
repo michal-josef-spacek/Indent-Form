@@ -1,4 +1,4 @@
-0.08
+0.08 2023-11-20T14:12:39+01:00
  - Fix Makefile.PL which fails with no '.' in @INC.
  - Fix indent in doc.
  - Rename example files to better names.
